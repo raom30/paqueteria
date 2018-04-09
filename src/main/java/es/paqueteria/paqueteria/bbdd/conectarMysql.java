@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 public class conectarMysql {
 
@@ -38,7 +39,7 @@ public class conectarMysql {
 		conectarMysql db = new conectarMysql();
 
 		try {
-			db.MySQLConnection("root", "", "test");
+			db.MySQLConnection("root", "", "paqueteria");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
