@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.sql.*;
 
-public class conectarMysql {
+public class ConectarMysql {
 
 	private static Connection Conexion;
 
@@ -19,9 +19,9 @@ public class conectarMysql {
 			Conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + db_name, user, pass);
 			JOptionPane.showMessageDialog(null, "Se ha iniciado la conexión con el servidor de forma exitosa");
 		} catch (ClassNotFoundException ex) {
-			Logger.getLogger(conectarMysql.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ConectarMysql.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (SQLException ex) {
-			Logger.getLogger(conectarMysql.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ConectarMysql.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -30,13 +30,13 @@ public class conectarMysql {
 			Conexion.close();
 			System.out.println("Se ha finalizado la conexión con el servidor");
 		} catch (SQLException ex) {
-			Logger.getLogger(conectarMysql.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ConectarMysql.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
 	public static void main(String[] args) {
 
-		conectarMysql db = new conectarMysql();
+		ConectarMysql db = new ConectarMysql();
 
 		try {
 			db.MySQLConnection("root", "", "paqueteria");
