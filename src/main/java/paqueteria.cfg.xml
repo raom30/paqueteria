@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Dialecto Hibernate org.hibernate.dialect.MySQLInnoDBDialect -> No 
+			permite crear BD si no existe org.hibernate.dialect.MySQLDialect -> Permite 
+			crear BD si no existe -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Conexión a la base de datos -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/paqueteria</property>
+		<property name="hibernate.connection.username">id5474099_raom30</property>
+		<property name="hibernate.connection.password">laleche1</property>
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+
+		<property name="hibernate.hbm2ddl.auto">update</property><!-- Cuando lea las clases hace 
+			eso, create(crea las tablas y todo y borra lo anterior)update(actualiza los 
+			registror y si lo quitamos solo se unen -->
+
+		<!-- https://docs.jboss.org/hibernate/orm/3.3/reference/es-ES/html/session-configuration.html -->
+		<!-- INDICAMOS LAS CLASES QUE QUEREMOS QUE MAPEAR PARA QUE SEAN TABLAS -->
+		<mapping class="es.aytos.hibernate.hibernate_dual.modelo.Persona" />
+		<mapping class="es.aytos.hibernate.hibernate_dual.modelo.Cliente" />
+		<mapping class="es.aytos.hibernate.hibernate_dual.modelo.Usuario" />
+		<mapping class="es.aytos.hibernate.hibernate_dual.modelo.Direccion" />
+		<mapping class="es.aytos.hibernate.hibernate_dual.modelo.Telefono" />
+		<mapping class="es.aytos.hibernate.hibernate_dual.modelo.DetallePersona" />
+		<mapping class="es.aytos.hibernate.hibernate_dual.modelo.Nacionalidad" />
+	</session-factory>
+</hibernate-configuration>

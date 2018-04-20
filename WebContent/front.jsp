@@ -5,29 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Paquetería</title>
 </head>
 <body>
 <%
 
-ConectarMysql db = new ConectarMysql();
-try {
-	db.MySQLConnection("root", "", "paqueteria");
-} catch (Exception e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-
-ResultSet rs;
-PreparedStatement ps = null;
-
-	rs = ps.executeQuery("SELECT * FROM PROVINCIA WHERE ID_L = 1");
-	rs = ps.executeQuery();
-	
-	rs.getInt(1);
-	
 
 %>
-<p>Nombre Localidad: <%= rs.getString(3)%> <p>
+<p><p>
 </body>
 </html>
